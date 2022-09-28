@@ -1,8 +1,8 @@
 const sequelize = require('../config/connection');
 
 // import part of the sequelize library
-const{ Model, DataTypes}=require('sequelize');
 
+const { Model, DataTypes } = require('sequelize');
 //library for password 
 const bcrypt = require('bcrypt');
 
@@ -18,20 +18,20 @@ class User extends Model {
 
 User.init({
     id:{
-        type:sequelize.INTEGER,
-        primarykey:true,
-        autoincrement:true,
-        allownull:false,
+        type: DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement:true,
+        allowNull:false,
     },
     username: {
-        type:sequelize.STRING,
-        allownull:false,
+        type: DataTypes.STRING,
+        allowNull:false,
         validate:{
             len:[3, 26]},
         },
     password:{
-        type:sequelize.STRING,
-        allownull:false,
+        type: DataTypes.STRING,
+        allowNull:false,
         validate:
         {len:[5, 60]},
     },

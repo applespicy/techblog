@@ -1,8 +1,8 @@
 const sequelize = require('../config/connection');
 
 // import part of the sequelize library
-const{Model, DataTypes}=require('sequelize');
 
+const { Model, DataTypes } = require('sequelize');
 
 
 // initialize user Model table
@@ -10,24 +10,24 @@ class Post extends Model{}
 
 Post.init({
     id:{
-        type:sequelize.INTEGER,
-        primarykey:true,
-        autoincrement:true,
+        type: DataTypes.INTEGER,
+        primaryKey:true,
+        autoIncrement:true,
         allownull:false,
     },
     content: {
-        type:sequelize.TEXT,
-        allownull:false,
+        type: DataTypes.STRING,
+        allowNull:false,
         },
     title:{
-        type:sequelize.STRING,
-        allownull:false,
+        type: DataTypes.STRING,
+        allowNull:false,
     },
 
 
     user_id:{
-        type:sequelize.INTEGER,
-        allownull:false,
+        type: DataTypes.INTEGER,
+        allowNull:false,
         reference:{
             model:'user',
             key:'id'
